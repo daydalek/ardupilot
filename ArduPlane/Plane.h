@@ -185,6 +185,7 @@ public:
     Plane(void);
 
 private:
+    void print_sensor_data(void);
 
     // key aircraft parameters passed to multiple libraries
     AP_FixedWing aparm;
