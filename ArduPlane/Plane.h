@@ -123,6 +123,7 @@
 #include "AP_Arming.h"
 #include "pullup.h"
 
+#define PRINT_SENSOR_DATA 0
 /*
   main APM:Plane class
  */
