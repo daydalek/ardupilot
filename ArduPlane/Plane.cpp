@@ -65,9 +65,6 @@ const AP_Scheduler::Task Plane::scheduler_tasks[] = {
     FAST_TASK(update_control_mode),
     FAST_TASK(stabilize),
     FAST_TASK(set_servos),
-#if PRINT_SENSOR_DATA
-    SCHED_TASK(print_sensor_data, 0.5, 100, 200), // 50Hz print task
-#endif
     SCHED_TASK(read_radio,             50,    100,   6),
     SCHED_TASK(check_short_failsafe,   50,    100,   9),
     SCHED_TASK(update_speed_height,    50,    200,  12),
@@ -152,6 +149,9 @@ const AP_Scheduler::Task Plane::scheduler_tasks[] = {
     SCHED_TASK(update_quicktune, 40, 100, 163),
 #endif
     /*SCHED_TASK(print_sensor_data, 50, 200, 45),*/
+#if PRINT_SENSOR_DATA
+    SCHED_TASK(print_sensor_data, 0.1, 10, 200), // 50Hz print task
+#endif
 };
 
 void Plane::get_scheduler_tasks(const AP_Scheduler::Task *&tasks,
