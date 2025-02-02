@@ -1,3 +1,4 @@
+#include "AP_Param/AP_Param.h"
 #include "Plane.h"
 
 #include <AP_Gripper/AP_Gripper.h>
@@ -816,6 +817,10 @@ const AP_Param::Info Plane::var_info[] = {
     GOBJECT(terrain,                "TERRAIN_", AP_Terrain),
 #endif
 
+#if AP_PAYLOAD_ENABLED
+    GOBJECT(payload,"PLD_",PayloadPredictor),
+#endif
+
 #if HAL_ADSB_ENABLED
     // @Group: ADSB_
     // @Path: ../libraries/AP_ADSB/AP_ADSB.cpp
@@ -1618,3 +1623,4 @@ void Plane::load_parameters(void)
 
     AP_Param::convert_toplevel_objects(toplevel_conversions, ARRAY_SIZE(toplevel_conversions));
 }
+// GGROUP(g2, "", "ParametersG2"),
