@@ -28,9 +28,12 @@ void Plane::adjust_altitude_target()
     control_mode->update_target_altitude();
 }
 
+/*当飞行器的海拔发生变化（比如被拿到了别的地方）重新调整高度控制系统*/
 void Plane::check_home_alt_change(void)
 {
     int32_t home_alt_cm = ahrs.get_home().alt;
+    //飞行器处于软臂（已经完成了一些传感器的检查 但是电机还没有真正
+    //
     if (home_alt_cm != auto_state.last_home_alt_cm && hal.util->get_soft_armed()) {
         // cope with home altitude changing
         const int32_t alt_change_cm = home_alt_cm - auto_state.last_home_alt_cm;

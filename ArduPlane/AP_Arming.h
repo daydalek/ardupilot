@@ -1,3 +1,4 @@
+/*负责安全关键的解锁和锁定逻辑 */
 #pragma once
 
 #include <AP_Arming/AP_Arming.h>
@@ -5,6 +6,7 @@
 #ifndef AP_PLANE_BLACKBOX_LOGGING
 #define AP_PLANE_BLACKBOX_LOGGING 0
 #endif
+/*black box:黑匣子*/
 
 /*
   a plane specific arming class

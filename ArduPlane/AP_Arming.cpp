@@ -3,7 +3,6 @@
  */
 #include "AP_Arming.h"
 #include "Plane.h"
-
 #include "qautotune.h"
 
 constexpr uint32_t AP_ARMING_DELAY_MS = 2000; // delay from arming to start of motor spoolup
